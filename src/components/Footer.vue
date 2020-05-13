@@ -1,5 +1,5 @@
 <template>
-  <footer id="footer" class="bg-blue-900xxx bg-fireopal">
+  <footer id="footer" class="bg-blue-900 bg-fireopalxxx">
     <div class="footer container mx-auto py-4">
       <div class="flex flex-col justify-between">
         <p class>
@@ -58,34 +58,16 @@
       </div>
       <div>
         <ul class="footer__links text-sm text-white">
-          <!-- <li id="email">
+          <li id="email">
             <a
               href="mailto:gracesnowdesign@gmail.com"
               class="footer__link"
               aria-label="Email Grace"
               target="_blank"
             >
-              <svg
-                aria-hidden="true"
-                focussable="false"
-                xmlns="http://www.w3.org/2000/svg"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="footer__icon"
-              >
-                <path
-                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
+              <Email-icon class="footer__icon" stroke-width="2" />
             </a>
-          </li>-->
+          </li>
 
           <li id="github">
             <a
@@ -94,25 +76,7 @@
               aria-label="Go to Github"
               target="_blank"
             >
-              <!-- <g-image src="../../static/icons/github.svg" class="w-4 icon" alt="Github logo" /> -->
-              <svg
-                aria-hidden="true"
-                focussable="false"
-                xmlns="http://www.w3.org/2000/svg"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="footer__icon"
-              >
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                />
-              </svg>
+              <Github-icon class="footer__icon" stroke-width="2" />
             </a>
           </li>
           <li id="twitter">
@@ -122,25 +86,7 @@
               aria-label="Go to Twitter"
               target="_blank"
             >
-              <!-- <g-image src="../../static/icons/github.svg" class="w-4 icon" alt="Github logo" /> -->
-              <svg
-                aria-hidden="true"
-                focussable="false"
-                xmlns="http://www.w3.org/2000/svg"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="footer__icon"
-              >
-                <path
-                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
-                />
-              </svg>
+              <Twitter-icon class="footer__icon" stroke-width="2" />
             </a>
           </li>
           <li id="linkedin">
@@ -149,26 +95,7 @@
               class="footer__link"
               aria-label="Go to LinkedIn"
             >
-              <svg
-                aria-hidden="true"
-                focussable="false"
-                xmlns="http://www.w3.org/2000/svg"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="footer__icon"
-              >
-                <path
-                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-                />
-                <rect x="2" y="9" width="4" height="12" />
-                <circle cx="4" cy="4" r="2" />
-              </svg>
+              <Linkedin-icon class="footer__icon" stroke-width="2" />
             </a>
           </li>
         </ul>
@@ -188,8 +115,19 @@
 </template>
 
 <script>
+import EmailIcon from "../../static/icons/mail.svg";
+import GithubIcon from "../../static/icons/github.svg";
+import TwitterIcon from "../../static/icons/twitter.svg";
+import LinkedinIcon from "../../static/icons/linkedin.svg";
+
 export default {
-  name: "Footer"
+  name: "Footer",
+  components: {
+    EmailIcon,
+    GithubIcon,
+    TwitterIcon,
+    LinkedinIcon
+  }
 };
 </script>
 
@@ -237,5 +175,4 @@ export default {
 #email {
   margin-bottom: -0.25em;
 }
-
 </style>
