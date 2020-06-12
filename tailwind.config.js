@@ -9,10 +9,48 @@ module.exports = {
         '14': '14px',
       }
     },
+    screens: {
+      'xs': '340px',
+      // => @media (min-width: 340px) { ... }
+
+      'sm': '560px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '780px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '940px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1200px',
+      // => @media (min-width: 1280px) { ... }
+      
+      'xxl': '1400px',
+      // => @media (min-width: 1400px) { ... }
+    },
     container: {
-      padding: '1rem'
+      padding: {
+        default: '1rem',
+        sm: '1.5rem',
+        // lg: '3rem',
+        // xl: '4rem',
+      },
+      center: true,
+      maxWidth: {
+        default: 'none',
+        'xs': '560px',
+        'sm': '780px',
+        'md': '940px',
+        'lg': '120px',
+        'xl': '1400px'
+      },
     },
     colors: {
+      accent: {
+        100: "#ffcc33",
+        200: "#FFBF00",
+      },
+
       background: {
         primary: 'var(--bg-background-primary)',
         secondary: 'var(--bg-background-secondary)',
@@ -36,15 +74,16 @@ module.exports = {
       white: '#fff',
 
       blue: {
-        100: '#ebf8ff',
-        200: '#bee3f8',
-        300: '#90cdf4',
-        400: '#63b3ed',
-        500: '#4299e1',
-        600: '#3182ce',
-        700: '#2b6cb0',
-        800: '#2c5282',
-        900: '#2a4365',
+        100:  "#e7ffff",
+        200:  "#caf8ff",
+        300:  "#a1e9ff",
+        400:  "#6dcfff",
+        500:  "#48a6e5",
+        600:  "#2271c5",
+        700:  "#29628A",
+        800:  "#21406E",
+        900:  "#00375C",
+        1000: "#002B47"
       },
 
       indigo: {
@@ -107,11 +146,15 @@ module.exports = {
     },
     gradients: theme => ({
       // Array definition (defaults to linear gradients).
-      'topaz':      ['30deg', theme('colors.orange.500'), theme('colors.pink.400')],
-      'topaz-dark': ['30deg', theme('colors.orange.700'), theme('colors.pink.600')],
-      'emerald':    ['to right', theme('colors.green.400'), theme('colors.teal.500')],
-      'fireopal':   ['to right', '#40E0D0', '#FF8C00', '#FF0080'],
-      'relay':      ['to top left', '#3A1C71', '#D76D77', '#FFAF7B'],
+      'topaz':        ['30deg', theme('colors.orange.500'), theme('colors.pink.400')],
+      'topaz-dark':   ['30deg', theme('colors.orange.700'), theme('colors.pink.600')],
+      'emerald':      ['to right', theme('colors.green.400'), theme('colors.teal.500')],
+      'fireopal':     ['to right', '#40E0D0', '#FF8C00', '#FF0080'],
+      'relay':        ['to top left', '#3A1C71', '#D76D77', '#FFAF7B'],
+      'screenLight':  ['to top right', '#f5f5f5', '#dee5ed', '#bccee6'],
+      'screenDark':   ['to top right', '#000b29', '#021445', '#092c8b'],
+      'blue-g-900':     ['to bottom', theme('colors.blue.800'), theme('colors.blue.9000')],
+      'blue-g-1000':    ['to bottom', theme('colors.blue.900'), theme('colors.blue.1000')],
 
       // Object definition.
       'mono-circle': {
