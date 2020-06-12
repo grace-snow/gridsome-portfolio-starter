@@ -1,4 +1,5 @@
 module.exports = {
+  purge: false,
   theme: {
     extend: {
       spacing: {
@@ -113,19 +114,12 @@ module.exports = {
     fontFamily: {
       sans: [
         'Metropolis',
-        'Nunito Sans',
-        'Roboto',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
         '"Helvetica Neue"',
         'Arial',
-        '"Noto Sans"',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
+        'sans-serif'
       ],
       display: ['Titillium Web', 'sans-serif'],
       serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
@@ -138,6 +132,33 @@ module.exports = {
         'monospace',
       ],
     },
+    fontSize: {
+      'xs'   : '0.8125rem',
+      'sm'   : '0.875rem',
+      'base' : '1rem',
+      'lg'   : '1.2rem',
+      'xl'   : '1.44rem',
+      '2xl'  : '1.728rem',
+      '3xl'  : '2.074rem',
+      '4xl'  : '2.488rem',
+      '5xl'  : '2.986rem',
+      '6xl'  : '3.583',
+      'header1':	  '2.488rem',
+      'header2':    '2.074rem',
+      'header3':    '1.728rem',
+      'header4':    '1.44rem',
+      'header5':    '1.2rem',
+      'paragraph':  '1rem',
+      'smallText':  '0.875rem',
+      'tinyText':   '0.8125rem',
+      'jumbo1':     '2.986rem',
+      'jumbo2':     '3.583rem',
+      'jumbo3':     '4.3rem',
+      'jumbo4':     '5.16.887rem',
+      'jumbo5':     '5.16rem',
+      'jumbo6':     '5.16rem',
+    },
+
     lineHeight: {
       none: '1',
       tight: '1.1',
@@ -155,6 +176,8 @@ module.exports = {
       'screenDark':   ['to top right', '#000b29', '#021445', '#092c8b'],
       'blue-g-900':     ['to bottom', theme('colors.blue.800'), theme('colors.blue.9000')],
       'blue-g-1000':    ['to bottom', theme('colors.blue.900'), theme('colors.blue.1000')],
+      'btn-gradient':   ['to top', '#2BABD9', '#59DBFF'],
+      'btn-hoverGradient': ['to top', theme('colors.blue.400'), theme('colors.blue.300')],
 
       // Object definition.
       'mono-circle': {

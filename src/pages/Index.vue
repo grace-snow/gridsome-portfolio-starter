@@ -4,7 +4,7 @@
 
     <Intro id="intro" />
 
-    <section class="welcome">
+    <!-- <section class="welcome">
       <div
         class="hero container mx-auto flex flex-col sm:flex-row justify-between py-16 min-h-screen"
       >
@@ -37,8 +37,7 @@
           </div>
         </div>
       </div>
-      <!-- end hero -->
-    </section>
+    </section>-->
 
     <div class="container-inner mx-auto">
       <p class="text-lg sm:text-xl">

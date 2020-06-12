@@ -164,6 +164,7 @@ export default {
 }
 
 .cta {
+  @apply font-sans;
   margin-right: 20px;
 }
 

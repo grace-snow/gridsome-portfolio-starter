@@ -70,14 +70,184 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply font-display;
-  @apply leading-tight;
-  @apply text-blue-900;
+/* Scrollbar */
+body {
+	scrollbar-width: thin; /* future standards way */
+}
+body::-webkit-scrollbar {
+	width: thin; /* long-standing webkit way */
 }
 
-h1 {
-  @apply text-copy-primary
+*:focus {
+	outline: 4px solid #FFBF00;
+	outline-offset: 3px;
+}
+
+/* Base */
+h1, h2, h3, h4, h5, h6, button,
+nav,
+.button,
+.logo,
+.font-heading {
+  @apply font-display;
+  @apply font-semibold;
+  @apply text-blue-900;
+  letter-spacing: 0.3pt
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply leading-tight;
+	margin-bottom: 1.5rem;
+}
+
+h1	{	@apply text-header1; }
+h2	{	@apply text-header2; }
+h3	{	@apply text-header3; }
+h4	{	@apply text-header4; }
+h5	{	@apply text-header5; }
+
+p, li {
+  @apply tracking-wider;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* General global utilities */
+[hidden] {
+	display: none;
+}
+.nowrap {
+	white-space: nowrap;
+}
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important; 
+	-webkit-clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* Page helpers */
+/* May not be needed because of container! */
+.page-width {
+  max-width: 1400px;
+}
+
+/* Links */
+a {
+	text-decoration: underline;
+	@apply font-semibold;
+	@apply text-blue-600;
+	position: relative;
+}
+
+.link {
+  position: relative;
+}
+.link:after {
+  content: "";
+	position: absolute;
+	left: -2%;
+	bottom: -2%;
+	height: 104%;
+	width: 0;
+	z-index: -1;
+	transition: all 0.2s ease-in;
+	@apply bg-accent-100;
+}
+.link:hover {
+  @apply text-blue-800;
+}
+.link:hover:after {
+  width: 104%;
+}
+
+/* Buttons */
+.btn {
+	position: relative;
+	display: inline-flex;
+	justify-content: flex-start;
+	align-items: center;
+	line-height: 1.1;
+	margin-top: 1.5rem;
+	padding: 0.75em 1.85em 0.8em 1.25em;
+	border: 0;
+	clip-path: polygon(100% 0, 100% 0%, 90% 100%, 0 100%, 0 0);
+	background-image: linear-gradient(to top, #2BABD9, #59DBFF);
+	@apply font-display;
+	@apply text-blue-1000;
+	text-decoration: none;
+}
+.btn:after,
+.btn:before {
+	display: block;
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	transition: all 0.2s ease-in;
+}
+.btn:after {
+	height: 100%;
+	background: linear-gradient(to top, #6dcfff, #a1e9ff);
+	@apply bg-accent-200;
+	z-index: -1;
+}
+
+.btn:focus:before,
+.btn:hover:after,
+.btn:focus:after {
+	width: 100%;
+}
+
+/* Forms */
+label {
+	display: block;
+}
+textarea {
+	resize: none;
+}
+
+/* Global equals decal */
+.equals-decal {
+	position: relative;
+	display: inline-block;
+}
+
+.equals-decal:before,
+.equals-decal:after {
+	position: absolute;
+	content: "";
+	width: 50vw;
+	left: -50.5vw;
+	@apply bg-blue-400;
+	opacity: 0.3;
+	height: 25%;
+}
+.equals-decal:before {
+	bottom: 60%;
+}
+.equals-decal:after {
+	bottom: 15%;
 }
 
 @tailwind components;
